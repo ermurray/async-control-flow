@@ -1,37 +1,14 @@
-console.log('first');
 
-const logIt = function(){
-  return console.log('second');
-}
-
-const higherOrder = function(callback){
-  setTimeout(() =>{
-    callback()
-  },1000)
+const sayhello = (name) => {
+  return `Hello ${name}!`;
 };
-higherOrder(logIt)
-console.log('third');
 
-// closures
-function greeting() {
-  let message = 'Hi';
+const printToScreen = function(input) {
+  return sayhello(input); 
+};
 
-  function sayHi() {
-      console.log(message);
-  }
+// printToScreen('Macky');
 
-  return sayHi;
-}
-let hi = greeting();
-hi(); // still can access the message variable
+const anotherFunc = printToScreen('Macky');
 
-function greeting(message) {
-  return function(name){
-       return message + ' ' + name;
-  }
-}
-let sayHi = greeting('Hi');
-let sayHello = greeting('Hello');
-
-console.log(sayHi('John')); // Hi John
-console.log(sayHello('John')); // Hello John
+console.log(anotherFunc);

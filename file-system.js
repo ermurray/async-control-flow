@@ -1,35 +1,32 @@
 const fs = require('fs');
 
 console.log(Date.now());
-let total = 0
-fs.readFile('./data1.txt', 'utf-8', (err, data) => {
 
-  if(err){
-    console.log(err);
-    console.log(total);
-  } else {
+let total = 0;
+
+const myFunc = () => { 
+
+  fs.readFile('./data2.txt', 'utf-8', (err, data) => {
+    if(err){
+      return console.log('Error:', err)
+    }
     total += Number(data);
-    fs.readFile('./data2.txt', 'utf-8', (err, data2) => {
-      if(err){
-        console.log(err);
-        console.log('second data',total);
-      } else {
-        total += Number(data2);
-        console.log(total)
-      }
-    })
+  
+    console.log('total from read 2', total);
+  });
+
+}
+
+
+fs.readFile('./data1.txt', 'utf-8', (err, data) => {
+  if(err){
+    return console.log('Error:', err)
   }
+  total += Number(data);
+  myFunc();
+  console.log('total from read 1', total);
 });
 
-console.log(Date.now());
-console.log(Date.now());
-console.log(Date.now());
-console.log(Date.now());
-console.log(Date.now());
-console.log(Date.now());
-console.log(Date.now());
-console.log(Date.now());
-console.log(Date.now());
 
+console.log('outside read', total);
 
-const nameString = new String('first, last')

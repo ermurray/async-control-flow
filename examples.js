@@ -1,14 +1,12 @@
+const sayHello = function() {
+  console.log('Hello');
+}
 
-const sayhello = (name) => {
-  return `Hello ${name}!`;
+
+const higherOrderFunc = (callback) => {
+  return callback();
 };
 
-const printToScreen = function(input) {
-  return sayhello(input); 
-};
-
-// printToScreen('Macky');
-
-const anotherFunc = printToScreen('Macky');
-
-console.log(anotherFunc);
+console.log('before');
+higherOrderFunc(sayHello);
+console.log('after');

@@ -1,10 +1,19 @@
-console.log('log1');
-console.log('log2');
-console.log('log3');
+const bigNumber = 1000000;
 
-for(let i = 0; i <= 1000000; i++) {
-  console.log(i);
+console.log('log1', Date.now());
+console.log('log2', Date.now());
+console.log('log3', Date.now());
+
+const startTime = Date.now();
+
+for( let i  = 0; i <= bigNumber; i++) {
+  console.log(`step: ${i}`, `time: ${Date.now()}`);
 }
 
-console.log('log4');
-console.log('log5');
+const endTime = Date.now();
+console.log({startTime});
+console.log({endTime});
+console.log('time diff', endTime - startTime);
+console.log('log4', Date.now());
+console.log('log5', Date.now());
+console.log('log6', Date.now());

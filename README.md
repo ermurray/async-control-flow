@@ -2,13 +2,18 @@
 Lighthouse labs web flex lecture on asynchronous control flow
 
 ## Topics
+  - [ ] review 
   - [ ] higher order functions
   - [ ] synchronous code
   - [ ] asynchronous code
+  - [ ] 'setTimeOut'
+  - [ ] 'setInterval'
   - [ ] node file system
 
+## review
+-
+
 ## Questions
- - OOP
- - negative time in set timeout
+
 ## Higher order functions
 * 
